@@ -1,0 +1,24 @@
+# Chat Agent service dependencies — versions verified against PyPI on 2026-07-04.
+# No embedding or vector-store packages: retrieval is delegated to the
+# Retrieval service over HTTP (see app/services/retrieval_client.py).
+
+fastapi==0.139.0
+uvicorn[standard]==0.50.0
+python-multipart==0.0.32
+pydantic==2.13.4
+pydantic-settings==2.14.2
+
+# LangGraph 1.x + Postgres checkpointer (AsyncPostgresSaver: setup(), adelete_thread())
+langgraph==1.2.7
+langgraph-checkpoint-postgres==3.1.0
+
+# LangChain 1.x — init_chat_model lives in langchain.chat_models
+langchain==1.3.11
+langchain-core==1.4.8
+langchain-groq==1.1.3
+# Optional providers so LLM_MODEL can be swapped by env only (no code change)
+langchain-openai==1.3.3
+langchain-anthropic==1.4.8
+
+httpx==0.28.1
+psycopg[binary,pool]==3.3.4

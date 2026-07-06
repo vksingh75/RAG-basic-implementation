@@ -1,0 +1,13 @@
+# Retrieval service dependencies — versions verified against PyPI on 2026-07-04.
+# NOTE: torch is installed separately in the Dockerfile with CPU-only wheels
+# (--extra-index-url https://download.pytorch.org/whl/cpu) BEFORE this file,
+# so sentence-transformers' torch requirement is already satisfied.
+
+fastapi==0.139.0
+uvicorn[standard]==0.50.0
+pydantic==2.13.4
+pydantic-settings==2.14.2
+
+sentence-transformers==5.6.0
+qdrant-client==1.18.0
+psycopg[binary,pool]==3.3.4
